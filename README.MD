@@ -1,4 +1,3 @@
-
 # NearDate-PastAndFuture
 
 ## Getting Started

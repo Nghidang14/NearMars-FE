@@ -101,10 +101,10 @@ export default function Calendar({ setDayMonthYear }: CalendarProps) {
                                                             {
                                                                 ele != null && (
                                                                     <>
-                                                                        <span className="font-semibold absolute text-primary">{ele.key}</span>
+                                                                        <span className="top-0 right-0 font-semibold absolute text-primary">{ele.key}</span>
                                                                         {
                                                                             ele.token_id != null && (
-                                                                                <div className="group transition-all ease-in-out duration-200">
+                                                                                <div className="bottom-0 left-0 group transition-all ease-in-out duration-200">
                                                                                     <span className="bg-purple-400 text-white rounded-sm px-2 p-1 sm:rounded sm:p-1 sm:px-3 text-sm group-hover:hidden"><span className="hidden sm:inline-block">Minted</span></span>
                                                                                     <Link href={`/nft/${ele.token_id}`} passHref>
                                                                                         <a className="bg-purple-400 text-white rounded p-1 px-3 text-sm group-hover:block hidden cursor-pointer">View</a>
@@ -112,7 +112,7 @@ export default function Calendar({ setDayMonthYear }: CalendarProps) {
                                                                                 </div>
                                                                             )
                                                                         }
-                                                                        <span className=" bg-imageLight text-white rounded p-1 px-3 text-sm hidden group-hover:block hover:scale-110 transition-all duration-150 ease-in-out"
+                                                                        <span className="bottom-0 left-0 bg-imageLight text-white rounded p-1 px-3 text-sm hidden group-hover:block hover:scale-110 transition-all duration-150 ease-in-out"
                                                                             onClick={() => setDayMonthYear(parseInt(ele.key, 10), selectMonth, selectYear)}
                                                                         >Mint</span>                                                                      
                                                                     </>

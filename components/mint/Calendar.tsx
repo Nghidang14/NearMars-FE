@@ -28,15 +28,7 @@ export default function Calendar({ setDayMonthYear }: CalendarProps) {
         async function getNoOfDays() {
             if (!contractNFT) return;
 
-            let daysInMonth = new Date(selectYear, selectMonth + 1, 0).getDate();
-
-            // find where to start calendar day of week
-            let dayOfWeek = new Date(selectYear, selectMonth).getDay();
-            let daysArray = [];
-
-            for (let i = 1; i <= dayOfWeek; i++) {
-                daysArray.push(null);
-            }
+            let daysInMonth = 900;           
 
             let data = await Promise.all(new Array(daysInMonth).fill(0).map((_, i) =>
                 contractNFT.nft_token({
@@ -47,10 +39,9 @@ export default function Calendar({ setDayMonthYear }: CalendarProps) {
                         ...e
                     }
                 })
-            ));
-
+            ));           
             data.sort((a, b) => a.key - b.key);
-            setNoOfDay(daysArray.concat(data));
+            setNoOfDay(data);            
         }
         async function getNearmars() {             
             let arr : any[] = [];
@@ -71,7 +62,7 @@ export default function Calendar({ setDayMonthYear }: CalendarProps) {
             }
             setNoOfDay(arr);
         }
-        loading_screen(getNearmars);
+        loading_screen(getNoOfDays);
     }, [selectMonth, selectYear, contractNFT]);
     function previousMonth() {
         if (selectMonth == 0) {
@@ -89,261 +80,57 @@ export default function Calendar({ setDayMonthYear }: CalendarProps) {
             setSelectMonth(selectMonth + 1);
         }
     }
-
+    console.log(noOfDay);
     return (
-        <div className="mt-5 wrapper rounded shadow w-full">           
-            <div className="relative overflow-x-auto">            
-                <table className="table-auto">                    
-                    <tbody>
-                        {noOfDay.map((item, index) => {
-                            return (
-                                <tr className="text-center" key={index}>
-                                    <td className="border transition duration-500 ease-in aspect-square cursor-pointer hover:bg-secondary hover:bg-opacity-10 group">                          
+        <div className="mt-5 wrapper rounded shadow w-full">            
+            <table className="w-full">                
+                <tbody>
+                    {   
+                        noOfDay.map((e, i) => {
+                            if (i == 0 || i % 30 == 0) {
+                                return (
+                                    <tr className="text-center" key={i}>
                                         {
-                                            <Image alt="nearmars"
-                                            width={68} height={39}
-                                            src={near_mars_get_ipfs_link_image(`image_part_${item[0]}`)}
-                                            />
+                                            Array(30).fill(0).map((_, no) => {
+                                                let ele = noOfDay[i + no];
+                                                
+                                                return (
+                                                    <td key={i + no} className={`border transition duration-500 ease-in aspect-square
+                                                    ${(ele && ele.token_id == null) ? "cursor-pointer hover:bg-secondary hover:bg-opacity-10 group " : " bg-backgroundLight"}`}>
+                                                        <div className="flex flex-col aspect-square xl:w-10 md:w-10 sm:w-10 mx-auto w-1 overflow-hidden items-center justify-center relative">
+                                                            {
+                                                                ele != null && (
+                                                                    <>
+                                                                        <span className="font-semibold absolute text-primary">{ele.key}</span>
+                                                                        {
+                                                                            ele.token_id != null && (
+                                                                                <div className="group transition-all ease-in-out duration-200">
+                                                                                    <span className="bg-purple-400 text-white rounded-sm px-2 p-1 sm:rounded sm:p-1 sm:px-3 text-sm group-hover:hidden"><span className="hidden sm:inline-block">Minted</span></span>
+                                                                                    <Link href={`/nft/${ele.token_id}`} passHref>
+                                                                                        <a className="bg-purple-400 text-white rounded p-1 px-3 text-sm group-hover:block hidden cursor-pointer">View</a>
+                                                                                    </Link>
+                                                                                </div>
+                                                                            )
+                                                                        }
+                                                                        <span className=" bg-imageLight text-white rounded p-1 px-3 text-sm hidden group-hover:block hover:scale-110 transition-all duration-150 ease-in-out"
+                                                                            onClick={() => setDayMonthYear(parseInt(ele.key, 10), selectMonth, selectYear)}
+                                                                        >Mint</span>                                                                      
+                                                                    </>
+                                                                )                                                                 
+                                                            }
+                                                         
+                                                        </div>
+                                                    </td>
+                                                );
+                                            })
                                         }
-                                    </td>
-                                    <td className="border transition duration-500 ease-in aspect-square cursor-pointer hover:bg-secondary hover:bg-opacity-10 group">
-                                        {
-                                            <Image alt="nearmars"
-                                            width={68} height={39}
-                                            src={near_mars_get_ipfs_link_image(`image_part_${item[1]}`)}
-                                            />
-                                        }
-                                    </td>
-                                    <td className="border transition duration-500 ease-in aspect-square cursor-pointer hover:bg-secondary hover:bg-opacity-10 group">
-                                        {
-                                            <Image alt="nearmars"
-                                            width={68} height={39}
-                                            src={near_mars_get_ipfs_link_image(`image_part_${item[2]}`)}
-                                            />
-                                        }
-                                    </td>
-                                    <td className="border transition duration-500 ease-in aspect-square cursor-pointer hover:bg-secondary hover:bg-opacity-10 group">
-                                        {
-                                            <Image alt="nearmars"
-                                            width={68} height={39}
-                                            src={near_mars_get_ipfs_link_image(`image_part_${item[3]}`)}
-                                            />
-                                        }
-                                    </td>
-                                    <td className="border transition duration-500 ease-in aspect-square cursor-pointer hover:bg-secondary hover:bg-opacity-10 group">
-                                        {
-                                            <Image alt="nearmars"
-                                            width={68} height={39}
-                                            src={near_mars_get_ipfs_link_image(`image_part_${item[4]}`)}
-                                            />
-                                        }
-                                    </td>
-                                    <td className="border transition duration-500 ease-in aspect-square cursor-pointer hover:bg-secondary hover:bg-opacity-10 group">
-                                        {
-                                            <Image alt="nearmars"
-                                            width={68} height={39}
-                                            src={near_mars_get_ipfs_link_image(`image_part_${item[5]}`)}
-                                            />
-                                        }
-                                    </td>
-                                    <td className="border transition duration-500 ease-in aspect-square cursor-pointer hover:bg-secondary hover:bg-opacity-10 group">                        
-                                        {
-                                            <Image alt="nearmars"
-                                            width={68} height={39}
-                                            src={near_mars_get_ipfs_link_image(`image_part_${item[6]}`)}
-                                            />
-                                        }
-                                    </td>
-                                    <td className="border transition duration-500 ease-in aspect-square cursor-pointer hover:bg-secondary hover:bg-opacity-10 group">
-                                        {
-                                            <Image alt="nearmars"
-                                            width={68} height={39}
-                                            src={near_mars_get_ipfs_link_image(`image_part_${item[7]}`)}
-                                            />
-                                        }
-                                    </td>
-                                    <td className="border transition duration-500 ease-in aspect-square cursor-pointer hover:bg-secondary hover:bg-opacity-10 group">
-                                        {
-                                            <Image alt="nearmars"
-                                            width={68} height={39}
-                                            src={near_mars_get_ipfs_link_image(`image_part_${item[8]}`)}
-                                            />
-                                        }
-                                    </td>
-                                    <td className="border transition duration-500 ease-in aspect-square cursor-pointer hover:bg-secondary hover:bg-opacity-10 group">
-                                        {
-                                            <Image alt="nearmars"
-                                            width={68} height={39}
-                                            src={near_mars_get_ipfs_link_image(`image_part_${item[9]}`)}
-                                            />
-                                        }
-                                    </td>
-                                    <td className="border transition duration-500 ease-in aspect-square cursor-pointer hover:bg-secondary hover:bg-opacity-10 group">
-                                        {
-                                            <Image alt="nearmars"
-                                            width={68} height={39}
-                                            src={near_mars_get_ipfs_link_image(`image_part_${item[10]}`)}
-                                            />
-                                        }
-                                    </td>
-                                    <td className="border transition duration-500 ease-in aspect-square cursor-pointer hover:bg-secondary hover:bg-opacity-10 group">
-                                        {
-                                            <Image alt="nearmars"
-                                            width={68} height={39}
-                                            src={near_mars_get_ipfs_link_image(`image_part_${item[11]}`)}
-                                            />
-                                        }
-                                    </td>
-                                    <td className="border transition duration-500 ease-in aspect-square cursor-pointer hover:bg-secondary hover:bg-opacity-10 group">
-                                        {
-                                            <Image alt="nearmars"
-                                            width={68} height={39}
-                                            src={near_mars_get_ipfs_link_image(`image_part_${item[12]}`)}
-                                            />
-                                        }
-                                    </td>
-                                    <td className="border transition duration-500 ease-in aspect-square cursor-pointer hover:bg-secondary hover:bg-opacity-10 group">
-                                        {
-                                            <Image alt="nearmars"
-                                            width={68} height={39}
-                                            src={near_mars_get_ipfs_link_image(`image_part_${item[13]}`)}
-                                            />
-                                        }
-                                    </td>
-                                    <td className="border transition duration-500 ease-in aspect-square cursor-pointer hover:bg-secondary hover:bg-opacity-10 group">
-                                        {
-                                            <Image alt="nearmars"
-                                            width={68} height={39}
-                                            src={near_mars_get_ipfs_link_image(`image_part_${item[14]}`)}
-                                            />
-                                        }
-                                    </td>
-                                    <td className="border transition duration-500 ease-in aspect-square cursor-pointer hover:bg-secondary hover:bg-opacity-10 group">
-                                        {
-                                            <Image alt="nearmars"
-                                            width={68} height={39}
-                                            src={near_mars_get_ipfs_link_image(`image_part_${item[15]}`)}
-                                            />
-                                        }
-                                    </td>
-                                    <td className="border transition duration-500 ease-in aspect-square cursor-pointer hover:bg-secondary hover:bg-opacity-10 group">
-                                        {
-                                            <Image alt="nearmars"
-                                            width={68} height={39}
-                                            src={near_mars_get_ipfs_link_image(`image_part_${item[16]}`)}
-                                            />
-                                        }
-                                    </td>
-                                    <td className="border transition duration-500 ease-in aspect-square cursor-pointer hover:bg-secondary hover:bg-opacity-10 group">
-                                        {
-                                            <Image alt="nearmars"
-                                            width={68} height={39}
-                                            src={near_mars_get_ipfs_link_image(`image_part_${item[17]}`)}
-                                            />
-                                        }
-                                    </td>
-                                    <td className="border transition duration-500 ease-in aspect-square cursor-pointer hover:bg-secondary hover:bg-opacity-10 group">
-                                        {
-                                            <Image alt="nearmars"
-                                            width={68} height={39}
-                                            src={near_mars_get_ipfs_link_image(`image_part_${item[18]}`)}
-                                            />
-                                        }
-                                    </td>
-                                    <td className="border transition duration-500 ease-in aspect-square cursor-pointer hover:bg-secondary hover:bg-opacity-10 group">
-                                        {
-                                            <Image alt="nearmars"
-                                            width={68} height={39}
-                                            src={near_mars_get_ipfs_link_image(`image_part_${item[19]}`)}
-                                            />
-                                        }
-                                    </td>
-                                    <td className="border transition duration-500 ease-in aspect-square cursor-pointer hover:bg-secondary hover:bg-opacity-10 group">
-                                        {
-                                            <Image alt="nearmars"
-                                            width={68} height={39}
-                                            src={near_mars_get_ipfs_link_image(`image_part_${item[20]}`)}
-                                            />
-                                        }
-                                    </td>
-                                    <td className="border transition duration-500 ease-in aspect-square cursor-pointer hover:bg-secondary hover:bg-opacity-10 group">
-                                        {
-                                            <Image alt="nearmars"
-                                            width={68} height={39}
-                                            src={near_mars_get_ipfs_link_image(`image_part_${item[21]}`)}
-                                            />
-                                        }
-                                    </td>
-                                    <td className="border transition duration-500 ease-in aspect-square cursor-pointer hover:bg-secondary hover:bg-opacity-10 group">
-                                        {
-                                            <Image alt="nearmars"
-                                            width={68} height={39}
-                                            src={near_mars_get_ipfs_link_image(`image_part_${item[22]}`)}
-                                            />
-                                        }
-                                    </td>
-                                    <td className="border transition duration-500 ease-in aspect-square cursor-pointer hover:bg-secondary hover:bg-opacity-10 group">                       
-                                        {
-                                            <Image alt="nearmars"
-                                            width={68} height={39}
-                                            src={near_mars_get_ipfs_link_image(`image_part_${item[23]}`)}
-                                            />
-                                        }
-                                    </td>
-                                    <td className="border transition duration-500 ease-in aspect-square cursor-pointer hover:bg-secondary hover:bg-opacity-10 group">                       
-                                        {
-                                            <Image alt="nearmars"
-                                            width={68} height={39}
-                                            src={near_mars_get_ipfs_link_image(`image_part_${item[24]}`)}
-                                            />
-                                        }
-                                    </td>        
-                                    <td className="border transition duration-500 ease-in aspect-square cursor-pointer hover:bg-secondary hover:bg-opacity-10 group">
-                                        {
-                                            <Image alt="nearmars"
-                                            width={68} height={39}
-                                            src={near_mars_get_ipfs_link_image(`image_part_${item[25]}`)}
-                                            />
-                                        }
-                                    </td>
-                                    <td className="border transition duration-500 ease-in aspect-square cursor-pointer hover:bg-secondary hover:bg-opacity-10 group">
-                                        {
-                                            <Image alt="nearmars"
-                                            width={68} height={39}
-                                            src={near_mars_get_ipfs_link_image(`image_part_${item[26]}`)}
-                                            />
-                                        }
-                                    </td>
-                                    <td className="border transition duration-500 ease-in aspect-square cursor-pointer hover:bg-secondary hover:bg-opacity-10 group">
-                                        {
-                                            <Image alt="nearmars"
-                                            width={68} height={39}
-                                            src={near_mars_get_ipfs_link_image(`image_part_${item[27]}`)}
-                                            />
-                                        }
-                                    </td>   
-                                    <td className="border transition duration-500 ease-in aspect-square cursor-pointer hover:bg-secondary hover:bg-opacity-10 group">
-                                        {
-                                            <Image alt="nearmars"
-                                            width={68} height={39}
-                                            src={near_mars_get_ipfs_link_image(`image_part_${item[28]}`)}
-                                            />
-                                        }
-                                    </td>
-                                    <td className="border transition duration-500 ease-in aspect-square cursor-pointer hover:bg-secondary hover:bg-opacity-10 group">
-                                        {
-                                            <Image alt="nearmars"
-                                            width={68} height={39}
-                                            src={near_mars_get_ipfs_link_image(`image_part_${item[29]}`)}
-                                            />
-                                        }
-                                    </td>                                              
-                                </tr>
-                            );
-                        })}        
-                    </tbody>
-                </table>
-            </div>
+                                    </tr>
+                                );
+                            }
+                        })
+                    }
+                </tbody>
+            </table>
         </div>
     );
 }

@@ -13,4 +13,10 @@ export function get_ipfs_link_image(neardate_id: string) {
     return `https://${subDomainNearDateStorage}.ipfs.w3s.link/${neardate_id}.png`;
 }
 
+
+export function near_mars_get_ipfs_link_image(id: string) {
+    return `/images/${id}.png`;
+}
+
+
 export default client;

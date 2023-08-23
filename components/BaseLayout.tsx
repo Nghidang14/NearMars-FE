@@ -28,7 +28,7 @@ export default function BaseLayout({ children }: BaseLayoutProps) {
   // }, [])
 
   return (
-    <div className="bg-background min-h-screen">
+    <div className="bg-background min-h-screen" style={{ backgroundImage: 'url(/images/mars.jpg)' }}>
       <Header />
       {/* <aside className='fixed bg-gradient-to-r from-backgroundLight to-background md:w-60 w-16'>
         <SideBar />

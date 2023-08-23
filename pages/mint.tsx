@@ -240,7 +240,7 @@ const Mint: NextPage = () => {
           }
 
           <div className='px-24 flex flex-col items-center'>
-            <div className='h-64 w-64 bg-gray-400 rounded-md'>
+            {/* <div className='h-64 w-64 bg-gray-400 rounded-md'>
               <a className="block relative rounded overflow-hidden h-full cursor-pointer">
                 <Image alt="neardate"
                   className="object-center" layout='fill'
@@ -256,7 +256,7 @@ const Mint: NextPage = () => {
                   )
                 }
               </a>
-            </div>
+            </div> */}
             <span>
               {year}-{format_number_2_digit(month)}-{format_number_2_digit(day)}
             </span>

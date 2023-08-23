@@ -9,10 +9,10 @@ module.exports = {
         "85vh": "85vh"
       },
       colors: {
-        'primary': "#B9D7F9",
-        "secondary": "#E4B9F9",
-        "background": "#170F23",
-        "backgroundLight": "#231B2E",
+        'primary': "#E72837",
+        "secondary": "#FFFFFF",
+        "background": "#000000",
+        "backgroundLight": "#111010",
         "imageLight": "#FF00E5"
       },
       animation: {

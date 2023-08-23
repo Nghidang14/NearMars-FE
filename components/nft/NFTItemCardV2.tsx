@@ -31,7 +31,7 @@ export default function NFTItemCardV2({ nft }: NFTItemCardV2Props) {
                 <Link href={`/nft/${nft.token_id}`} passHref>
                     <a className="block relative rounded-md w-44 cursor-pointer aspect-square">
                         <div className="absolute w-44 rounded-md aspect-square border-2 border-imageLight bg-black blur-sm"></div>
-                        {/* <Image alt="neardate" className="object-contain object-center rounded-md p-1" src={get_ipfs_link_image(nft.token_id)} layout='fill' /> */}
+                        <Image alt="neardate" className="object-contain object-center rounded-md p-1" src={get_ipfs_link_image(nft.token_id)} layout='fill' />
                     </a>
                 </Link>
             </div>

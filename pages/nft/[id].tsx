@@ -174,7 +174,7 @@ const NFTItem: NextPage = () => {
         "account_id": account.accountId,
       }, 30000000000000, utils.format.parseNearAmount("0.1"))
       setIsDepositYet(true);
-    }, "NearDate is deposit");
+    }, "Mars is deposit");
   }
 
   async function onPutSaleClick() {
@@ -186,7 +186,7 @@ const NFTItem: NextPage = () => {
       }, 30000000000000, utils.format.parseNearAmount("0.01"));
 
       setIsSale(true);
-    }, 'NearDate is sale your NFT to marketplace');
+    }, 'Mars is sale your NFT to marketplace');
   }
 
   async function onEditSaleClick() {
@@ -208,7 +208,7 @@ const NFTItem: NextPage = () => {
             "price": utils.format.parseNearAmount(result.value.toString()),
           }, 30000000000000, "1")
           setPriceSale(result.value);
-        }, "NearDate is updating your price sale");
+        }, "Mars is updating your price sale");
       }
     })
   }
@@ -244,7 +244,7 @@ const NFTItem: NextPage = () => {
           }, 30000000000000, "1");
 
           setMessage(json_data);
-        }, "NearDate is updating message");
+        }, "Mars is updating message");
       }
     })
   }
@@ -266,7 +266,7 @@ const NFTItem: NextPage = () => {
         "token_id": id?.toString(),
       }, 30000000000000, utils.format.parseNearAmount(priceSale.toString()));
 
-    }, "NearDate is offering")
+    }, "Mars is offering")
   }
 
   async function onCancelBidOfferClick() {
@@ -287,7 +287,7 @@ const NFTItem: NextPage = () => {
         "memo": "NearDate NFT transfer",
       }, 30000000000000, "1")
       setIsOwner(false);
-    }, "NearDate is transfering")
+    }, "Mars is transfering")
   }
 
   async function onOfferAnotherSaleClick() {
@@ -308,7 +308,7 @@ const NFTItem: NextPage = () => {
             "token_id": id?.toString(),
           }, 30000000000000, utils.format.parseNearAmount(result.value.toString()));
 
-        }, "NearDate is sending your offer request")
+        }, "Mars is sending your offer request")
       }
     })
   }
@@ -327,7 +327,7 @@ const NFTItem: NextPage = () => {
             "nft_contract_id": contractNFT.contractId,
           }, 30000000000000, "1");
 
-        }, "NearDate is proccessing")
+        }, "Mars is proccessing")
       }
     })
   }
@@ -384,7 +384,7 @@ const NFTItem: NextPage = () => {
               "expire_at": Date.now() + 24 * 60 * 60 * 1000,
             }, 30000000000000, utils.format.parseNearAmount(resutl2.value.toString()));
 
-          }, "NearDate is proccessing")
+          }, "Mars is proccessing")
         }
       })
   }
@@ -408,7 +408,7 @@ const NFTItem: NextPage = () => {
             }, 30000000000000, "1")
           }
           setListBidSlot(listBidSlot.filter((e) => e.bid_id != bid_id));
-        }, "NearDate is proccessing")
+        }, "Mars is proccessing")
       }
     })
   }

@@ -7,10 +7,10 @@ export function get_ipfs_link(subDomain: string, filename: string) {
     return `https://${subDomain}.ipfs.w3s.link/${filename}`;
 }
 
-const subDomainNearDateStorage: string = process.env.NEXT_PUBLIC_STORAGE_WEB3_NEARDATE || "";
+const subDomainNearDateStorage: string = process.env.NEXT_PUBLIC_STORAGE_WEB3_NEARMARS || "";
 
-export function get_ipfs_link_image(neardate_id: string) {
-    return `https://${subDomainNearDateStorage}.ipfs.w3s.link/${neardate_id}.png`;
+export function get_ipfs_link_image(nearmars_id: string) {
+    return `https://${subDomainNearDateStorage}.ipfs.w3s.link/${nearmars_id}.png`;
 }
 
 

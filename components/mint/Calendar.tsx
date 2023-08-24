@@ -3,6 +3,8 @@ import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { format_number_2_digit } from "utils/format";
 import { loading_screen } from "utils/loading";
+import Image from 'next/image';
+import ipfs, { near_mars_get_ipfs_link_image } from "utils/ipfs";
 
 interface CalendarProps {
     setDayMonthYear: Function
@@ -108,7 +110,17 @@ export default function Calendar({ setDayMonthYear }: CalendarProps) {
                                                             {
                                                                 ele != null && (
                                                                     <>
-                                                                        <span className="top-0 right-0 font-semibold absolute text-primary">{ele.key}</span>
+                                                                        
+                                                                        <Image alt="neardate"   
+                                                                            width={150}
+                                                                            height={150}
+                                                                           
+                                                                            objectFit='contain'
+                                                                          
+                                                                            src={near_mars_get_ipfs_link_image(`${year}${format_number_2_digit(selectMonth+1)}${format_number_2_digit(ele.key)}`)}
+                                                                            />     
+                                                                        
+                                                                                                                                        
                                                                         {
                                                                             ele.token_id != null && (
                                                                                 <div className="group transition-all ease-in-out duration-200">
@@ -119,7 +131,7 @@ export default function Calendar({ setDayMonthYear }: CalendarProps) {
                                                                                 </div>
                                                                             )
                                                                         }
-                                                                        <span className=" bg-imageLight text-white rounded p-1 px-3 text-sm hidden group-hover:block hover:scale-110 transition-all duration-150 ease-in-out"
+                                                                        <span className=" bg-imageLight text-white rounded p-1 hover:z-50 z-100 px-3 text-sm hidden group-hover:block hover:scale-110 transition-all duration-150 ease-in-out"
                                                                             onClick={() => setDayMonthYear(parseInt(ele.key, 10), selectMonth, selectYear)}
                                                                         >Mint</span>
                                                                     </>

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { NFTModel, NFTMessageModel, NFTRentSlotModel, NFTSlotModel } from "types";
 import Image from 'next/image';
-import { get_ipfs_link_image } from "utils/ipfs";
+import { near_mars_get_ipfs_link_image } from "utils/ipfs";
 import { utils } from "near-api-js";
 import { useAppContext } from "context/state";
 
@@ -60,10 +60,10 @@ export default function NFTCard({ nft, size }: NFTCardProps) {
                 <a className={`block relative rounded overflow-hidden h-full cursor-pointer aspect-square 
                     ${size == CardSize.Large ? "w-1/2" : "w-3/4"}`}>
                     {
-                        nft?.token_id && <Image alt="neardate" className="object-contain object-center w-full block" src={get_ipfs_link_image(nft?.token_id)} layout='fill' />
+                        nft?.token_id && <Image alt="Mars" className="object-contain object-center w-full block" src={near_mars_get_ipfs_link_image(nft?.token_id)} layout='fill' />
                     }
                     {
-                        !nft?.token_id && <Image alt="neardate" className="object-contain object-center w-full block" src="https://dummyimage.com/421x261" layout='fill' />
+                        !nft?.token_id && <Image alt="Mars" className="object-contain object-center w-full block" src="https://dummyimage.com/421x261" layout='fill' />
                     }
                 </a>
             </Link>

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { NFTModel, NFTMessageModel } from "types";
 import Image from 'next/image';
-import { get_ipfs_link_image } from "utils/ipfs";
+import { near_mars_get_ipfs_link_image } from "utils/ipfs";
 import { truncate } from "utils/format";
 
 interface NFTItemCardV2Props {
@@ -19,7 +19,7 @@ export default function NFTItemCardV2({ nft }: NFTItemCardV2Props) {
         fetch(nft.message)
             .then(data => data.json())
             .then((e: NFTMessageModel) => {
-                setMessage(e);
+                setMessage(e); 
                 setDate(e.token_created_date);
             })
             .catch(err => console.log(err))
@@ -31,7 +31,7 @@ export default function NFTItemCardV2({ nft }: NFTItemCardV2Props) {
                 <Link href={`/nft/${nft.token_id}`} passHref>
                     <a className="block relative rounded-md w-44 cursor-pointer aspect-square">
                         <div className="absolute w-44 rounded-md aspect-square border-2 border-imageLight bg-black blur-sm"></div>
-                        <Image alt="neardate" className="object-contain object-center rounded-md p-1" src={get_ipfs_link_image(nft.token_id)} layout='fill' />
+                        <Image alt="Mars" className="object-contain object-center rounded-md p-1" src={near_mars_get_ipfs_link_image(nft.token_id)} layout='fill' />
                     </a>
                 </Link>
             </div>

@@ -22,7 +22,7 @@ export default function Header({ }: HeaderProps) {
         <Link href="/">
           <a className='flex space-x-3 items-center md:pl-8'>
             <Image className="bg-white rounded-full p-50" src="/logo.png" alt="Mars" width="104" height="104"  />
-            <span className=' text-2xl text-primary font-semibold'>
+            <span className=' text-2xl text-white font-semibold'>
               Way to the Future
             </span>
           </a>

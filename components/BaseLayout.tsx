@@ -28,7 +28,7 @@ export default function BaseLayout({ children }: BaseLayoutProps) {
   // }, [])
 
   return (
-    <div className="min-h-screen bg-contain" style={{ backgroundImage: 'url(/images/mars.jpg)' }}>
+    <div className="min-h-screen bg-no-repeat bg-cover" style={{ backgroundImage: 'url(/images/mars.jpg)' }}>
       <Header />
       {/* <aside className='fixed bg-gradient-to-r from-backgroundLight to-background md:w-60 w-16'>
         <SideBar />

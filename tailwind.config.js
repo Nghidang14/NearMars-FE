@@ -9,7 +9,7 @@ module.exports = {
         "85vh": "85vh"
       },
       colors: {
-        'primary': "#E72837",
+        'primary': "#FFFF00",
         "secondary": "#FFFFFF",
         "background": "#000000",
         "backgroundLight": "#111010",

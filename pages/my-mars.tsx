@@ -70,28 +70,28 @@ const MyNearDate: NextPage = () => {
   return (
     <BaseLayout>
       <Head>
-        <title>My MearDate | NearDate-PastAndFuture</title>
+        <title>My Mars | NearMars-Way to the Future</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <section className="text-gray-600 body-font">
+      <section className="text-primary body-font">
         <div className="container px-5 py-24 mx-auto">
-          <nav className="flex text-sm font-medium border-b border-gray-100">
-            <button className={`cursor-pointer p-4 -mb-px border-b hover:text-cyan-500 ${tabSelected == TabSelect.YourNFT && "text-cyan-500 border-current"}`}
+          <nav className="flex justify-around text-xl font-bold border-b border-gray-100">
+            <button className={`cursor-pointer p-4 -mb-px border-b hover:text-cyan-500 ${tabSelected == TabSelect.YourNFT && "text-cyan-500 border-2 rounded-lg bg-primary"}`}
               onClick={() => setTabSelected(TabSelect.YourNFT)}
             >
               Your NFT
             </button>
-            <button className={`cursor-pointer p-4 -mb-px border-b hover:text-cyan-500 ${tabSelected == TabSelect.YourBid && "text-cyan-500 border-current"}`}
+            <button className={`cursor-pointer p-4 -mb-px border-b hover:text-cyan-500 ${tabSelected == TabSelect.YourBid && "text-cyan-500 border-2 rounded-lg bg-primary"}`}
               onClick={() => setTabSelected(TabSelect.YourBid)}
             >
               Your NFT Bid
             </button>
-            <button className={`cursor-pointer p-4 -mb-px border-b hover:text-cyan-500 ${tabSelected == TabSelect.YourSlot && "text-cyan-500 border-current"}`}
+            <button className={`cursor-pointer p-4 -mb-px border-b hover:text-cyan-500 ${tabSelected == TabSelect.YourSlot && "text-cyan-500 border-2 rounded-lg bg-primary"}`}
               onClick={() => setTabSelected(TabSelect.YourSlot)}
             >
               Rent Slot
             </button>
-            <button className={`cursor-pointer p-4 -mb-px border-b hover:text-cyan-500 ${tabSelected == TabSelect.YourSlotBid && "text-cyan-500 border-current"}`}
+            <button className={`cursor-pointer p-4 -mb-px border-b hover:text-cyan-500 ${tabSelected == TabSelect.YourSlotBid && "text-cyan-500 border-2 rounded-lg bg-primary"}`}
               onClick={() => setTabSelected(TabSelect.YourSlotBid)}
             >
               Rent Slot Bid

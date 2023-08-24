@@ -56,7 +56,7 @@ const Marketplace: NextPage = () => {
   return (
     <BaseLayout>
       <Head>
-        <title>Marketplace | NearDate-PastAndFuture</title>
+        <title>Marketplace | Way to the Future</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <div className="container px-4 py-12 mx-auto sm:px-6 lg:px-8">
@@ -73,36 +73,36 @@ const Marketplace: NextPage = () => {
               </summary>
               <form className="border-t border-gray-200 lg:border-t-0">
                 <fieldset>
-                  <legend className="block w-full px-5 py-3 text-xs font-medium bg-backgroundLight">
+                  <legend className="block w-full px-5 py-3 text-m font-bold bg-yellow-300">
                     Select by
                   </legend>
                   <div className="px-5 py-6 space-y-2">
                     <div className="flex items-center">
-                      <input id="Day" name="type[Day]" className="border-gray-300 rounded px-2 py-1 border-none bg-backgroundLight" type="number" value={dateFilter.day == 0 ? "" : dateFilter.day}
+                      <input id="Day" name="type[Day]" className="border-gray-300 rounded px-2 py-1 border-none bg-white" type="number" value={dateFilter.day == 0 ? "" : dateFilter.day}
                         onChange={(e) => setDateFilter({ ...dateFilter, day: parseIntT(e.target.value) })}
                       />
-                      <label htmlFor="Day" className="text-sm font-medium ml-3">
+                      <label htmlFor="Day" className="text-m font-bold ml-3 text-yellow-300">
                         Day
                       </label>
                     </div>
                     <div className="flex items-center">
-                      <input id="Month" name="type[Month]" className="border-gray-300 rounded px-2 py-1 border-none bg-backgroundLight appearance-none" type="number" value={dateFilter.month == 0 ? "" : dateFilter.month}
+                      <input id="Month" name="type[Month]" className="border-gray-300 rounded px-2 py-1 border-none bg-white appearance-none" type="number" value={dateFilter.month == 0 ? "" : dateFilter.month}
                         onChange={(e) => setDateFilter({ ...dateFilter, month: parseIntT(e.target.value) })}
                       />
-                      <label htmlFor="Month" className="text-sm font-medium ml-3">
+                      <label htmlFor="Month" className="text-m font-bold ml-3 text-yellow-300">
                         Month
                       </label>
                     </div>
                     <div className="flex items-center">
-                      <input id="Year" name="type[Year]" className="border-gray-300 rounded px-2 py-1 border-none bg-backgroundLight appearance-none" type="number" value={dateFilter.year == 0 ? "" : dateFilter.year}
+                      <input id="Year" name="type[Year]" className="border-gray-300 rounded px-2 py-1 border-none bg-white appearance-none" type="number" value={dateFilter.year == 0 ? "" : dateFilter.year}
                         onChange={(e) => setDateFilter({ ...dateFilter, year: parseIntT(e.target.value) })}
                       />
-                      <label htmlFor="Year" className="text-sm font-medium ml-3">
+                      <label htmlFor="Year" className="text-m font-bold ml-3 text-yellow-300">
                         Year
                       </label>
                     </div>
                     <div className="pt-2">
-                      <button type="button" className="text-xs text-gray-500 underline"
+                      <button type="button" className="text-s text-red-500 underline hover:text-xl"
                         onClick={() => setDateFilter({
                           "day": 0,
                           "month": 0,
@@ -116,7 +116,7 @@ const Marketplace: NextPage = () => {
                 </fieldset>
                 <div>
                   <fieldset>
-                    <legend className="block w-full px-5 py-3 text-xs font-medium bg-backgroundLight">
+                    <legend className="block w-full px-5 py-3 text-xs font-medium bg-white">
                       Price
                     </legend>
                     <div className="px-5 py-6 space-y-2">
@@ -152,9 +152,9 @@ const Marketplace: NextPage = () => {
               </form>
             </details>
           </div>
-          <div className="lg:col-span-3 px-2">
-            <div className='my-2'>
-              <span className=' font-bold'>Tổng số {filterNFT(listNFT).length}</span>
+          <div className="lg:col-span-1 px-2 flex">
+            <div className='my-2 border-2 rounded-sm bg-white'>
+              <span className=' font-bold text-red-600'>Tổng số {filterNFT(listNFT).length}</span>
             </div>
 
             <section className="text-gray-600 body-font">

@@ -62,7 +62,7 @@ export default function MintIntroduction() {
                         </div>
                         <div className="lg:w-3/5 md:w-1/2 rounded-lg md:mt-0 mt-12 block overflow-hidden h-full">
                             <a className="block relative rounded overflow-hidden h-full cursor-pointer">
-                                <Image className="object-cover object-center block w-full" src="/logo.png" alt="step" width="1200" height="500" layout="intrinsic" />
+                                <Image className="object-center block w-full" src="/map.jpg" alt="step" width="1200" height="700" layout="intrinsic" />
                             </a>
                         </div>
                     </div>

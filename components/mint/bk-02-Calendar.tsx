@@ -101,7 +101,7 @@ export default function Calendar({ setDayMonthYear }: CalendarProps) {
                                                             {
                                                                 ele != null && (
                                                                     <>
-                                                                        <span className="top-0 right-0 font-semibold absolute text-primary">{ele.key}</span>
+                                                                        
                                                                         {
                                                                             ele.token_id != null && (
                                                                                 <div className="bottom-0 left-0 group transition-all ease-in-out duration-200">

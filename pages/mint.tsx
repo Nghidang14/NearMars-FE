@@ -10,7 +10,7 @@ import CountDown from "components/mint/CountDown";
 
 import Link from 'next/link';
 import { format_number_2_digit } from "utils/format";
-import ipfs, { get_ipfs_link, get_ipfs_link_image } from "utils/ipfs";
+import ipfs, { get_ipfs_link, near_mars_get_ipfs_link_image } from "utils/ipfs";
 import { utils } from "near-api-js";
 import Image from "next/image";
 import { loading_screen } from "utils/loading";
@@ -88,7 +88,7 @@ const Mint: NextPage = () => {
         }, 30000000000000, firstMint ? utils.format.parseNearAmount("0.01") : utils.format.parseNearAmount("1.01"));
 
         router.push(`nft/${neardate}`);
-      }, "NearDate is now minting your date")
+      }, "Mars is now minting your date")
     }
   }
 
@@ -157,15 +157,15 @@ const Mint: NextPage = () => {
   return (
     <BaseLayout>
       <Head>
+        <title>Mint | Near Mars - Way to the Future</title>
         <title>Mint | NearMars</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <div className='container px-5 mx-auto pb-24'>
 
         <MintIntroduction />
-        <div className='bg-cover bg-no-repeat bg-center' style={{backgroundImage: 'url(/images/bando.jpg)'}}>
-          <Calendar setDayMonthYear={setDayMonthYear} />
-        </div>
+        
+       
 
         <div className='pt-24'>
           <div className="mb-12 px-4 py-3 text-white bg-yellow-500">
@@ -201,12 +201,13 @@ const Mint: NextPage = () => {
             </ol>
           </div>
         </div>
+        
 
         <div className='container pt-12 grid md:grid-cols-2 grid-cols-1 gap-4'>
           {
             step == 1 && (
               <div className='md:px-24 px-12 flex flex-col'>
-                <span>Select your date above calendar</span>
+                <span>Select your Mars</span>
               </div>
             )
           }
@@ -246,7 +247,7 @@ const Mint: NextPage = () => {
               <a className="block relative rounded overflow-hidden h-full cursor-pointer">
                 <Image alt="neardate"
                   className="object-center" layout='fill'
-                  src={get_ipfs_link_image(`${year}${format_number_2_digit(month)}${format_number_2_digit(day)}`)}
+                  src={near_mars_get_ipfs_link_image(`${year}${format_number_2_digit(month)}${format_number_2_digit(day)}`)}
                 />
                 {
                   isMintd && (
@@ -277,6 +278,9 @@ const Mint: NextPage = () => {
               </svg>
             </button>
           </div>
+        </div>
+        <div className='bg-cover bg-no-repeat bg-center' style={{backgroundImage: 'url(/images/bando.jpg)'}}>
+          <Calendar setDayMonthYear={setDayMonthYear} />
         </div>
       </div>
     </BaseLayout>

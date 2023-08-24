@@ -74,7 +74,7 @@ export default function Calendar({ setDayMonthYear }: CalendarProps) {
         <div className="mt-5 wrapper rounded shadow w-full ">
             <div className="header flex justify-between border-b p-2">
                 <span className="text-lg font-bold">
-                    {selectYear} {MONTH_NAMES[selectMonth]}
+                    Mars RS-{selectMonth + 1}
                 </span>
                 <div >
                     <button className="p-1 hover:scale-125 transition-all ease-in-out duration-150" onClick={previousMonth}>
@@ -111,15 +111,12 @@ export default function Calendar({ setDayMonthYear }: CalendarProps) {
                                                                 ele != null && (
                                                                     <>
                                                                         
-                                                                        <Image alt="neardate"   
+                                                                        <Image alt="Mars"   
                                                                             width={150}
-                                                                            height={150}
-                                                                           
-                                                                            objectFit='contain'
-                                                                          
+                                                                            height={150}                                                                           
+                                                                            objectFit='contain'                                                                          
                                                                             src={near_mars_get_ipfs_link_image(`${year}${format_number_2_digit(selectMonth+1)}${format_number_2_digit(ele.key)}`)}
-                                                                            />     
-                                                                        
+                                                                            />                                                                            
                                                                                                                                         
                                                                         {
                                                                             ele.token_id != null && (

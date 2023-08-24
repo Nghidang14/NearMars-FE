@@ -15,10 +15,10 @@ export default function NFTSaleCard({ nft }: NFTItemCardProps) {
             <Link href={`/nft/${nft.token_id}`} passHref>
                 <a className="block relative rounded overflow-hidden h-full cursor-pointer aspect-square">
                     {
-                        nft.token_id && <Image alt="neardate" className="object-contain object-center w-full block" src={get_ipfs_link_image(nft.token_id)} layout='fill' />
+                        nft.token_id && <Image alt="Mars" className="object-contain object-center w-full block" src={get_ipfs_link_image(nft.token_id)} layout='fill' />
                     }
                     {
-                        !nft.token_id && <Image alt="neardate" className="object-contain object-center w-full block" src="https://dummyimage.com/421x261" layout='fill' />
+                        !nft.token_id && <Image alt="Mars" className="object-contain object-center w-full block" src="https://dummyimage.com/421x261" layout='fill' />
                     }
                     <div className="absolute left-1 bottom-2 border-green-900/10 bg-green-50 rounded-sm px-2 py-1 font-semibold text-green-700">
                         {utils.format.formatNearAmount(nft.sale_conditions)} NEAR

@@ -164,8 +164,6 @@ const Mint: NextPage = () => {
       <div className='container px-5 mx-auto pb-24'>
 
         <MintIntroduction />
-        
-       
 
         <div className='pt-24'>
           <div className="mb-12 px-4 py-3 text-white bg-yellow-500">
@@ -245,7 +243,7 @@ const Mint: NextPage = () => {
           <div className='px-24 flex flex-col items-center'>
             <div className='h-64 w-64 bg-gray-400 rounded-md'>
               <a className="block relative rounded overflow-hidden h-full cursor-pointer">
-                <Image alt="neardate"
+                <Image alt="Mars"
                   className="object-center" layout='fill'
                   src={near_mars_get_ipfs_link_image(`${year}${format_number_2_digit(month)}${format_number_2_digit(day)}`)}
                 />
@@ -261,7 +259,10 @@ const Mint: NextPage = () => {
               </a>
             </div>
             <span>
+            <span className=' text-2xl text-white font-semibold'>
               Mars{format_number_2_digit(month)}{year}{format_number_2_digit(day)}
+            </span>
+              
             </span>
             <button className={
               `mt-6 inline-flex items-center px-8 py-3 text-white border  rounded hover:bg-transparent  focus:outline-none focus:ring

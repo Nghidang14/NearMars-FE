@@ -55,7 +55,7 @@ export default function NFTShowCard({ nft }: NFTShowCardProps) {
                 <Link href={`/nft/${nft?.token_id}`} passHref>
                     <a className="h-36 aspect-square bg-imageLight relative rounded-md cursor-pointer">
                         <div className="absolute h-36 rounded-md aspect-square border-2 border-imageLight bg-black blur-sm"></div>
-                        <Image alt="neardate" className="object-contain object-center rounded-md p-1" src={get_ipfs_link_image(nft.token_id)} layout='fill' />
+                        <Image alt="Mars" className="object-contain object-center rounded-md p-1" src={get_ipfs_link_image(nft.token_id)} layout='fill' />
                     </a>
                 </Link>
                 <div className="flex flex-col w-full justify-between">

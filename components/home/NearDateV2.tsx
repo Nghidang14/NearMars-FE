@@ -69,36 +69,12 @@ export default function NearDate() {
   }
 
   return (
-    <section className="py-24 flex justify-center flex-col items-center">
-      {/* <div className="my-16 flex gap-4 md:gap-16">
-        <div className="md:w-[18rem] w-[3rem] h-96 overflow-hidden relative " >
-          <div className="md:w-[18rem] w-[3rem] absolute h-96 bg-gradient-to-l from-transparent to-background cursor-pointer"
-            onClick={previousIndex}>
-          </div>
-          <div className="float-right">
-            {
-              indexNearDatePrevious != null && <NFTShowCard key={indexNearDatePrevious} nft={listNft[indexNearDatePrevious]} />
-            }
-          </div>
-        </div>
-        {
-          indexNearDateNow != null && <NFTShowCard key={indexNearDateNow} nft={listNft[indexNearDateNow]} />
-        }
-        <div className="md:w-[18rem] w-[3rem] h-96 overflow-hidden relative">
-          <div className="md:w-[18rem] w-[3rem] absolute h-96 bg-gradient-to-r from-transparent to-background cursor-pointer"
-            onClick={nextIndex}
-          >
-          </div>
-          {
-            indexNearDateNext != null && <NFTShowCard key={indexNearDateNext} nft={listNft[indexNearDateNext]} />
-          }
-        </div>
-      </div> */}
+    <section className="py-24 flex justify-center flex-col items-center">   
       <div className="mt-4 max-w-xl mx-auto text-center">
         <div className="flex flex-wrap justify-center gap-4 mt-8">
           <Link href='/mint'>
-            <a className="w-full px-12 py-3 text-sm font-medium text-primary bg-backgroundLight border-b-2 rounded-md shadow sm:w-auto hover:bg-secondary transition-all duration-200 hover:text-imageLight focus:outline-none focus:ring">
-              Mine Your Date
+            <a className="btn-whimsical sm:text-3xl text-2xl font-medium title-font mb-2 text-white">
+              Mint now
             </a>
           </Link>
         </div>

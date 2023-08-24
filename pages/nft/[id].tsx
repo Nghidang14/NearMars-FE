@@ -7,7 +7,7 @@ import { useAppContext } from "context/state";
 import Link from 'next/link';
 import { useRouter } from 'next/router'
 import { NFTMessageModel, NFTModel, NFTSaleModel, NFTBidModel, NFTBidSlotModel, NFTSlotModel, NFTRentSlotModel } from "types";
-import ipfs, { get_ipfs_link, get_ipfs_link_image } from 'utils/ipfs';
+import ipfs, { get_ipfs_link, near_mars_get_ipfs_link_image } from 'utils/ipfs';
 import { utils } from "near-api-js";
 import { loading_screen } from "utils/loading";
 import { new_json_file } from 'utils/file';
@@ -424,7 +424,7 @@ const NFTItem: NextPage = () => {
           <div className='col-span-1 flex flex-col justify-start items-center w-full px-10'>
             <div className="relative rounded-md w-full aspect-square">
               <div className="absolute w-full rounded-md aspect-square border-2 border-imageLight bg-black blur-sm"></div>
-              {id && <Image alt="Mars" className="object-contain object-center rounded-md p-1" src={get_ipfs_link_image(id.toString())} layout='fill' />}
+              {id && <Image alt="Mars" className="object-contain object-center rounded-md p-1" src={near_mars_get_ipfs_link_image(id.toString())} layout='fill' />}
               {
                 isSale && (
                   <div className="absolute left-1 bottom-2 border-green-900/10 bg-green-50 rounded-sm px-2 py-1 font-semibold text-green-700">

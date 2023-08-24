@@ -30,7 +30,7 @@ export default function RandomNFT() {
     <section className="text-gray-600 body-font">
       <div className="container px-5 mx-auto">
         <div className="flex flex-wrap w-full flex-col items-center text-center">
-          <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-primary">Random Date</h1>
+          <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-white">Mars Lists</h1>
         </div>
         <div className="container mx-auto mt-10">
           <div className="flex flex-wrap gap-10 justify-center">

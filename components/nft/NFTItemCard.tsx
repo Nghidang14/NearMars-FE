@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { NFTModel, NFTMessageModel } from "types";
 import Image from 'next/image';
-import { get_ipfs_link_image } from "utils/ipfs";
+import { near_mars_get_ipfs_link_image } from "utils/ipfs";
 
 interface NFTItemCardProps {
     nft: NFTModel;
@@ -27,7 +27,7 @@ export default function NFTItemCard({ nft }: NFTItemCardProps) {
             <Link href={`/nft/${nft.token_id}`} passHref>
                 <a className="block relative rounded overflow-hidden h-full cursor-pointer aspect-square">
                     {
-                        nft.token_id && <Image alt="Mars" className="object-contain object-center w-full block" src={get_ipfs_link_image(nft.token_id)} layout='fill' />
+                        nft.token_id && <Image alt="Mars" className="object-contain object-center w-full block" src={near_mars_get_ipfs_link_image(nft.token_id)} layout='fill' />
                     }
                     {
                         !nft.token_id && <Image alt="Mars" className="object-contain object-center w-full block" src="https://dummyimage.com/421x261" layout='fill' />

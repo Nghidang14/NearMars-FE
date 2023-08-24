@@ -165,9 +165,7 @@ const Mint: NextPage = () => {
 
         <MintIntroduction />
         
-        <div className='bg-cover bg-no-repeat bg-center' style={{backgroundImage: 'url(/images/bando.jpg)'}}>
-          <Calendar setDayMonthYear={setDayMonthYear} />
-        </div>
+       
 
         <div className='pt-24'>
           <div className="mb-12 px-4 py-3 text-white bg-yellow-500">
@@ -281,7 +279,9 @@ const Mint: NextPage = () => {
             </button>
           </div>
         </div>
-        <Calendar setDayMonthYear={setDayMonthYear} />
+        <div className='bg-cover bg-no-repeat bg-center' style={{backgroundImage: 'url(/images/bando.jpg)'}}>
+          <Calendar setDayMonthYear={setDayMonthYear} />
+        </div>
       </div>
     </BaseLayout>
   )

@@ -157,13 +157,15 @@ const Mint: NextPage = () => {
   return (
     <BaseLayout>
       <Head>
-        <title>Mint | NearDate-PastAndFuture</title>
+        <title>Mint | NearMars</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <div className='container px-5 mx-auto pb-24'>
 
         <MintIntroduction />
-        <Calendar setDayMonthYear={setDayMonthYear} />
+        <div className='bg-cover bg-no-repeat bg-center' style={{backgroundImage: 'url(/images/bando.jpg)'}}>
+          <Calendar setDayMonthYear={setDayMonthYear} />
+        </div>
 
         <div className='pt-24'>
           <div className="mb-12 px-4 py-3 text-white bg-yellow-500">

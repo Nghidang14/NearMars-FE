@@ -5,5 +5,5 @@ const nextConfig = {
     domains : ['localhost', 'bafybeiezfbfqmagz3d4hyj32nu2feltjiplf7ya4ql67ncntyrixr3ozim.ipfs.w3s.link'],  
   },  
 }
-module.exports = nextConfig
 
+module.exports = nextConfig

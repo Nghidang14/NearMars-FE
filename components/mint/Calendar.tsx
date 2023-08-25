@@ -49,7 +49,9 @@ export default function Calendar({ setDayMonthYear }: CalendarProps) {
             ));
 
             data.sort((a, b) => a.key - b.key);
+            console.log(data);
             setNoOfDay(daysArray.concat(data));
+            
         }
         loading_screen(getNoOfDays);
     }, [selectMonth, selectYear, contractNFT]);

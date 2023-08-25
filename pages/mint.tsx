@@ -88,7 +88,7 @@ const Mint: NextPage = () => {
         }, 30000000000000, firstMint ? utils.format.parseNearAmount("0.01") : utils.format.parseNearAmount("1.01"));
 
         router.push(`nft/${neardate}`);
-      }, "Mars is now minting your date")
+      }, "Mars is now minting")
     }
   }
 

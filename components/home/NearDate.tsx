@@ -110,7 +110,7 @@ export default function NearDate() {
         <div className="flex flex-wrap justify-center gap-4 mt-8">
           <Link href={'/mint'}>
             <a className="block w-full px-12 py-3 text-sm font-medium text-white bg-red-600 rounded shadow sm:w-auto active:bg-red-500 hover:bg-red-700 focus:outline-none focus:ring">
-              Mint Your Date
+              Mint Your Mars
             </a>
           </Link>
           {/* <Link href={'/about'}>

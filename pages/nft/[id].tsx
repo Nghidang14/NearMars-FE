@@ -445,7 +445,7 @@ const NFTItem: NextPage = () => {
             </div>
             <div className="flex flex-col w-full justify-between">
               <div className="px-5 py-2 bg-backgroundLight rounded-3xl relative mt-2 w-full">
-                <p className="text-center text-2xl">{message?.message}</p>
+                <p className="text-center text-2xl text-white">{message?.message}</p>
                 <div className="absolute top-0 left-0 h-0.5 w-6 bg-primary"></div>
                 <div className="absolute top-0 left-0 h-3 w-0.5 bg-primary"></div>
                 <div className="absolute top-0 right-0 h-0.5 w-6 bg-primary"></div>

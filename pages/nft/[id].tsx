@@ -478,7 +478,7 @@ const NFTItem: NextPage = () => {
             <div className='flex flex-col justify-center items-start'>
 
               <div className='flex flex-row justify-center items-center mb-5'>
-                <span className=' font-semibold text-2xl'>{message?.message}</span>
+                <span className='text-white font-semibold text-2xl'>{message?.message}</span>
 
                 {
                   isOwner && <button className='ml-2' onClick={onEditMessageClick}>
@@ -488,7 +488,7 @@ const NFTItem: NextPage = () => {
                   </button>
                 }
               </div>
-              <p className='text-xl mb-2'>Owner : <span className=' font-semibold'>{owner_id}</span></p>
+              <p className='text-white text-xl mb-2'>Owner : <span className=' font-semibold'>{owner_id}</span></p>
               {
                 isSale && <div className='flex flex-row justify-center items-center mb-5'>
                   <span className=' font-semibold text-xl'>Sale price: {priceSale} NEAR</span>
@@ -556,7 +556,7 @@ const NFTItem: NextPage = () => {
                   {
                     !isDepositYet && (
                       <>
-                        <span>You must approve before do sale</span>
+                        <span className='text-white'>You must approve before do sale</span>
                         <button className=' bg-yellow-400 ml-2 px-3 py-1 mb-5 rounded-md'
                           onClick={onDepositClick}
                         >Approve</button>

@@ -29,7 +29,7 @@ export default function MintIntroduction() {
                                 </div>
                                 <div className="flex-grow pl-4">
                                     <h2 className="font-medium title-font text-sm text-secondary mb-1 tracking-wider">SELECT</h2>
-                                    <p className="leading-relaxed text-primary">Select the DATE you want to mint. We have every date from 5/6/1933 - when <a href="https://www.history.com/this-day-in-history/fdr-takes-united-states-off-gold-standard">Franklin D. Roosevelt takes United States off gold standard</a>, to 1/1/2140 - when the last bitcoin will be minted (estimate)</p>
+                                    <p className="leading-relaxed text-primary">Select the REGION in map you want to mint. </p>
                                 </div>
                             </div>
                             <div className="flex relative pb-12">
@@ -44,7 +44,7 @@ export default function MintIntroduction() {
                                 </div>
                                 <div className="flex-grow pl-4">
                                     <h2 className="font-medium title-font text-sm text-secondary mb-1 tracking-wider">MESSAGE</h2>
-                                    <p className="leading-relaxed text-primary">Type a message, this message will be sticked to your NFT and can be editted later. You can send the message to future date or just write down your memory on this date. </p>
+                                    <p className="leading-relaxed text-primary">Type a message, this message will be sticked to your NFT and can be editted later. You can send the message who you are or talk to people what you want to do in Mars planet. </p>
                                 </div>
                             </div>
                             <div className="flex relative">
@@ -56,7 +56,7 @@ export default function MintIntroduction() {
                                 </div>
                                 <div className="flex-grow pl-4">
                                     <h2 className="font-medium title-font text-sm text-secondary mb-1 tracking-wider">PAYMENT</h2>
-                                    <p className="leading-relaxed text-primary">The first 5,452 NFTs will be minted FREE. After that you have to pay 1 Near for mintting new NFT</p>
+                                    <p className="leading-relaxed text-primary">We have all 358 Region NFTs.They are limited so hurry up, get it as soon as you can to get more benefit</p>
                                 </div>
                             </div>
                         </div>

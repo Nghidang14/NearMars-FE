@@ -14,8 +14,10 @@ export default function Contents() {
                                     <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
                                 </svg>
                             </div>
-                            <h2 className="text-lg font-medium title-font mb-2 text-primary">Your meaningful date NFT </h2>
-                            <p className="leading-relaxed text-base text-secondary">Send your message to the future date or just tell everyone your son birthday</p>
+                            <h2 className="text-lg font-medium title-font mb-2 text-primary">Your region of Mars NFT</h2>
+                            <p className="leading-relaxed text-base text-secondary">
+                                Send your message at your region to tell everyone it's yours, you are a resident in the Mars.You can join NearMars's events in the future and get big prize and teleport to your region instantly
+                            </p>
                         </div>
                     </div>
                     <div className="xl:w-1/3 md:w-1/2 p-4">
@@ -40,7 +42,7 @@ export default function Contents() {
                                 </svg>
                             </div>
                             <h2 className="text-lg font-medium title-font mb-2 text-primary">Use your NFT to get more benefit</h2>
-                            <p className="leading-relaxed text-base text-secondary">If you own an NFT with special day, you can get some discount coupon from our partner.</p>
+                            <p className="leading-relaxed text-base text-secondary">If you own an NFT near Space station, you can get more benefit in the Future such as Crossing Fees from other users.Let's get your NearMars NFT as soon as you can!</p>
                         </div>
                     </div>
                 </div>

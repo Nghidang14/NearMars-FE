@@ -166,9 +166,9 @@ const Mint: NextPage = () => {
         <MintIntroduction />
 
         <div className='pt-24'>
-          <div className="mb-12 px-4 py-3 text-white bg-yellow-500">
+          <div className="mb-12 p-4  text-white bg-black shadow-slate-500 rounded-3xl">
             <div className="text-sm font-medium text-center">
-              Next time to mint in 
+              <span className=' text-2xl font-semibold'>Next time to mint in</span> 
               <CountDown timeEndAction={()=> {}} dateInit={new Date(timeoutToMint || Date.now())}/>
               <Link href="/marketplace" passHref>
                 <a className="underline"> <span className='text-secondary'>or </span> Go to Martketplace → </a>
@@ -205,7 +205,7 @@ const Mint: NextPage = () => {
           {
             step == 1 && (
               <div className='md:px-24 px-12 flex flex-col'>
-                <span>Select your Mars</span>
+                <span className='text-white text-2xl font-semibold'>Select your Mars</span>
               </div>
             )
           }
@@ -227,13 +227,13 @@ const Mint: NextPage = () => {
           {
             step == 3 && (
               <div className='md:px-24 px-12 flex flex-col items-start'>
-                <p className='text-xl font-semibold'>Message</p>
-                <p className='text-md'>{message}</p>
-                <p className='text-xl font-semibold mt-2 lg:mt-4'>Price</p>
-                <p className='text-md'>{firstMint ? "Free" : "1 NEAR"}</p>
-                <p className='text-xl font-semibold mt-2 lg:mt-4'>Storage fee</p>
-                <p className='text-md'>0.01 NEAR</p>
-                <button className='mt-5 bg-blue-500 px-5 py-2 rounded-md hover:bg-blue-600' onClick={() => setCanNextClick(true)}>
+                <p className='text-xl font-semibold text-white'>Message</p>
+                <p className='text-md text-white'>{message}</p>
+                <p className='text-xl text-white font-semibold mt-2 lg:mt-4'>Price</p>
+                <p className='text-md text-white'>{firstMint ? "Free" : "1 NEAR"}</p>
+                <p className='text-xl text-white font-semibold mt-2 lg:mt-4'>Storage fee</p>
+                <p className='text-md text-white'>0.01 NEAR</p>
+                <button className='mt-5 text-white bg-blue-500 px-5 py-2 rounded-md hover:bg-blue-600' onClick={() => setCanNextClick(true)}>
                   Confirm
                 </button>
               </div>

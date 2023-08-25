@@ -29,7 +29,7 @@ export default function Header({ }: HeaderProps) {
         </Link>
         <nav className="md:mx-auto md:py-1 md:pl-4 flex gap-2 md:gap-10 items-center text-base justify-center w-full">
           <Link href="/">
-            <a className={`flex py-2 space-x-2 items-center hover:bg-red-800 hover:rounded-lg hover:text-xl
+            <a className={`flex p-3 space-x-2 items-center hover:bg-red-800 hover:rounded-lg 
               ${(asPath == "/" || asPath.indexOf("/?") == 0) ? "bg-red-700 text-primary rounded-lg" : "text-secondary"}
             `}>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
@@ -42,7 +42,7 @@ export default function Header({ }: HeaderProps) {
           </Link>
           {
             account?.accountId && <Link href="/mint">
-              <a className={`flex py-2 space-x-2 items-center hover:bg-red-800 hover:rounded-lg hover:text-xl
+              <a className={`flex p-3 space-x-2 items-center hover:bg-red-800 hover:rounded-lg
               ${asPath == "/mint" || asPath.indexOf("/mint?") == 0 ? "bg-red-700 text-primary rounded-lg" : "text-secondary"}
             `}>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
@@ -55,7 +55,7 @@ export default function Header({ }: HeaderProps) {
             </Link>
           }
           <Link href="/marketplace">
-            <a className={`flex py-2 space-x-2 items-center hover:bg-red-800 hover:rounded-lg hover:text-xl
+            <a className={`flex p-3 space-x-2 items-center hover:bg-red-800 hover:rounded-lg
               ${asPath == "/marketplace" || asPath.indexOf("/marketplace?") == 0 ? "bg-red-700 text-primary rounded-lg" : "text-secondary"}
             `}>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
@@ -68,13 +68,13 @@ export default function Header({ }: HeaderProps) {
           </Link>
           {
             account?.accountId && <Link href="/my-mars">
-              <a className={`flex py-2 space-x-2 items-center hover:bg-red-800 hover:rounded-lg hover:text-xl
+              <a className={`flex p-3 space-x-2 items-center hover:bg-red-800 hover:rounded-lg
               ${asPath == "/my-mars" || asPath.indexOf("/my-mars?") == 0 ? "bg-red-700 text-primary rounded-lg" : "text-secondary"}
             `}>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
                 </svg>
-                <span className='text-md hidden lg:block hover:text-xl'>
+                <span className='text-md hidden lg:block'>
                   My Mars
                 </span>
               </a>

@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains : ['localhost', 'dummyimage.com', 'bafybeiezfbfqmagz3d4hyj32nu2feltjiplf7ya4ql67ncntyrixr3ozim.ipfs.w3s.link'],  
+    domains : ['localhost', 'mintmars.netlify.app','dummyimage.com', 'bafybeiezfbfqmagz3d4hyj32nu2feltjiplf7ya4ql67ncntyrixr3ozim.ipfs.w3s.link'],  
   },  
 }
 

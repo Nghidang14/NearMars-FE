@@ -15,7 +15,7 @@ const Home: NextPage = () => {
   return (
     <BaseLayout>
       <Head>
-        <title>NearMars</title>
+        <title>Near Mars</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <div className='relative max-w-full z-10'>

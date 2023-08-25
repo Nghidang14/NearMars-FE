@@ -23,7 +23,7 @@ export default function Header({ }: HeaderProps) {
           <a className='flex space-x-3 items-center md:pl-8'>
             <Image className="bg-white rounded-full p-50" src="/logo.png" alt="Mars" width="104" height="104"  />
             <span className=' text-2xl text-white font-semibold'>
-              Way to the Future
+              Way to the Future 
             </span>
           </a>
         </Link>
@@ -133,7 +133,7 @@ export default function Header({ }: HeaderProps) {
             </div>)
             :
             (
-              <div className="flex items-center w-full justify-center">
+              <div className="flex items-center w-full justify-center max-w-fit">
                 <button className="bg-secondary px-6 py-2 rounded-lg font-bold" onClick={login}>Connect wallet</button>
               </div>
             )

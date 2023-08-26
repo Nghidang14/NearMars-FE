@@ -416,7 +416,7 @@ const NFTItem: NextPage = () => {
   return (
     <BaseLayout>
       <Head>
-        <title>{id} | NearDate-PastAndFuture</title>
+        <title>{id} | NearMars - Way To The Future</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <div className='container py-12 px-5 mx-auto'>

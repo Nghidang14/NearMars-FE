@@ -8,6 +8,7 @@ import NearDateV2 from "components/home/NearDateV2";
 import RandomNFT from "components/home/RandomNFT";
 import Contents from "components/home/Contents";
 import OurTeam from "components/home/OurTeam";
+import { login } from 'utils/near';
 
 const Home: NextPage = () => {
   const { account } = useAppContext()

@@ -170,7 +170,7 @@ const Mint: NextPage = () => {
             <div className="text-sm font-medium text-center">
               <span className=' text-2xl font-semibold'>Next time to mint in</span> 
               <CountDown timeEndAction={()=> {}} dateInit={new Date(timeoutToMint || Date.now())}/>
-{/*               <Link href="/marketplace" passHref>
+              {/* <Link href="/marketplace" passHref>
                 <a className="underline"> <span className='text-secondary'>or </span> Go to Martketplace → </a>
               </Link> */}
             </div>
@@ -216,7 +216,7 @@ const Mint: NextPage = () => {
                   <span className="text-xs font-medium text-primary">
                     Message
                   </span>
-                  <textarea className="w-full bg-transparent text-secondary p-0 text-sm border-none focus:ring-0" id="message" placeholder="Message"
+                  <textarea className="w-full bg-transparent text-white p-0 text-m border-none focus:ring-0" id="message" placeholder="Message"
                     rows={5}
                     value={message}
                     onChange={(e) => setMessage(e.target.value)} />
@@ -227,11 +227,11 @@ const Mint: NextPage = () => {
           {
             step == 3 && (
               <div className='md:px-24 px-12 flex flex-col items-start'>
-                <p className='text-xl font-semibold text-white'>Message</p>
+                <p className='text-xl font-semibold text-primary'>Message</p>
                 <p className='text-md text-white'>{message}</p>
-                <p className='text-xl text-white font-semibold mt-2 lg:mt-4'>Price</p>
+                <p className='text-xl text-primary font-semibold mt-2 lg:mt-4'>Price</p>
                 <p className='text-md text-white'>{firstMint ? "Free" : "1 NEAR"}</p>
-                <p className='text-xl text-white font-semibold mt-2 lg:mt-4'>Storage fee</p>
+                <p className='text-xl text-primary font-semibold mt-2 lg:mt-4'>Storage fee</p>
                 <p className='text-md text-white'>0.01 NEAR</p>
                 <button className='mt-5 text-white bg-blue-500 px-5 py-2 rounded-md hover:bg-blue-600' onClick={() => setCanNextClick(true)}>
                   Confirm

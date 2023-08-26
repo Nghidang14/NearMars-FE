@@ -54,7 +54,7 @@ export default function Header({ }: HeaderProps) {
               </a>
             </Link>
           }
-{/*           <Link href="/marketplace">
+          <Link href="/marketplace">
             <a className={`flex p-3 space-x-2 items-center hover:bg-red-800 hover:rounded-lg
               ${asPath == "/marketplace" || asPath.indexOf("/marketplace?") == 0 ? "bg-red-700 text-primary rounded-lg" : "text-secondary"}
             `}>
@@ -65,7 +65,7 @@ export default function Header({ }: HeaderProps) {
                 Marketplace
               </span>
             </a>
-          </Link> */}
+          </Link>
           {
             account?.accountId && <Link href="/my-mars">
               <a className={`flex p-3 space-x-2 items-center hover:bg-red-800 hover:rounded-lg

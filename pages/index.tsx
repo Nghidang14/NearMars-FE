@@ -24,7 +24,24 @@ const Home: NextPage = () => {
         <div className="absolute overflow-hidden top-[80vh] right-12 w-36 h-36 bg-opacity-40 bg-secondary rounded-full filter blur-2xl opacity-70 animate-blob animation-delay-4000"></div>
         <div className="absolute overflow-hidden top-0 left-8 w-48 h-48 bg-opacity-40 bg-secondary rounded-full filter blur-2xl opacity-70 animate-blob animation-delay-4000"></div>
       </div>
-      <NearDateV2 />
+      {
+        account?.accountId ?
+        <NearDateV2 />
+        :
+        (
+          <section className="py-24 flex justify-center flex-col items-center">   
+            <div className="mt-4 max-w-xl mx-auto text-center">
+              <div className="flex flex-wrap justify-center gap-4 mt-8">
+                <button onClick={login}>
+                  <a className="btn-whimsical sm:text-3xl text-2xl font-medium title-font mb-2 text-white">
+                    Mint now
+                  </a>
+                </button>
+              </div>
+            </div>
+          </section>
+        )
+      }
       <RandomNFT />
       <Contents />
       {/* <OurTeam /> */}

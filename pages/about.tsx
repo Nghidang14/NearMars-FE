@@ -14,7 +14,7 @@ const Home: NextPage = () => {
   return (
     <BaseLayout>
       <Head>
-        <title>About | NearDate-PastAndFuture</title>
+        <title>About | NearMars - Way To The Future</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <OurTeam />

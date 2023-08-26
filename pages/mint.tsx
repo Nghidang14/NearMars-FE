@@ -170,9 +170,9 @@ const Mint: NextPage = () => {
             <div className="text-sm font-medium text-center">
               <span className=' text-2xl font-semibold'>Next time to mint in</span> 
               <CountDown timeEndAction={()=> {}} dateInit={new Date(timeoutToMint || Date.now())}/>
-              <Link href="/marketplace" passHref>
+{/*               <Link href="/marketplace" passHref>
                 <a className="underline"> <span className='text-secondary'>or </span> Go to Martketplace → </a>
-              </Link>
+              </Link> */}
             </div>
           </div>
 
